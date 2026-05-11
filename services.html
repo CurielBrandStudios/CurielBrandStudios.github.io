@@ -199,12 +199,23 @@
         linear-gradient(145deg, rgba(214,181,109,0.07), rgba(255,255,255,0.012));
     }
 
-    .card .number {
-      color: var(--muted-gold);
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 18px;
-      letter-spacing: 4px;
-      margin-bottom: 18px;
+   .card h3::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 1px;
+  background: rgba(214,181,109,0.72);
+  margin: 18px 0 18px;
+}
+
+.card h3::before {
+  content: "✦";
+  display: block;
+  color: var(--muted-gold);
+  font-size: 16px;
+  margin-bottom: 14px;
+  letter-spacing: 3px;
+}
     }
 
     .card h3 {
@@ -371,7 +382,6 @@
 
       <article class="card">
         <div>
-          <div class="number">01</div>
           <h3>Business Setup & Consulting</h3>
           <p>
             Administrative support, formation research assistance, launch planning,
@@ -383,7 +393,6 @@
 
       <article class="card">
         <div>
-          <div class="number">02</div>
           <h3>Branding & Design Development</h3>
           <p>
             Visual identity direction, logo refinement, typography and color guidance,
@@ -395,7 +404,6 @@
 
       <article class="card">
         <div>
-          <div class="number">03</div>
           <h3>Marketing Materials & Client PDFs</h3>
           <p>
             Service menus, proposals, brochures, welcome packets, intake forms,
@@ -407,7 +415,6 @@
 
       <article class="card">
         <div>
-          <div class="number">04</div>
           <h3>Websites & Digital Pages</h3>
           <p>
             Canva websites, Google Sites styling, link-in-bio pages, QR landing pages,
@@ -419,7 +426,6 @@
 
       <article class="card">
         <div>
-          <div class="number">05</div>
           <h3>Seller Branding Package</h3>
           <p>
             A polished real estate package including listing presentation design,
@@ -431,7 +437,6 @@
 
       <article class="card">
         <div>
-          <div class="number">06</div>
           <h3>Client Welcome Pack</h3>
           <p>
             A branded onboarding document set designed to guide clients through
@@ -443,7 +448,6 @@
 
       <article class="card">
         <div>
-          <div class="number">07</div>
           <h3>Contract Styling Package</h3>
           <p>
             Design and formatting for existing agreement text, proposals, and contract-style
@@ -455,7 +459,6 @@
 
       <article class="card">
         <div>
-          <div class="number">08</div>
           <h3>Intake Form Design Package</h3>
           <p>
             Branded client questionnaires, service selection forms, project discovery forms,
@@ -467,7 +470,6 @@
 
       <article class="card">
         <div>
-          <div class="number">09</div>
           <h3>Link-in-Bio Signature Page</h3>
           <p>
             A polished Linktree-style page with organized links, button structure,
