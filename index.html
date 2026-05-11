@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curiel Brand Studios</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --black: #090909;
-      --charcoal: #121212;
-      --ivory: #f5efe4;
-      --soft-ivory: #fbf7ee;
-      --gold: #d6b56d;
-      --deep-gold: #9c7938;
-      --text-dark: #1b1b1b;
+      --black: #060606;
+      --charcoal: #10100f;
+      --ivory: #f7f1e6;
+      --soft-ivory: #fbf7ef;
+      --gold: #c6a15a;
+      --bright-gold: #d6b56d;
+      --deep-gold: #8f6b2d;
+      --muted-gold: #9b742f;
+      --text-dark: #181818;
+      --cream-text: #f3ead5;
     }
 
     * {
@@ -23,13 +28,13 @@
     body {
       margin: 0;
       background: var(--black);
-      color: var(--text-dark);
-      font-family: Arial, sans-serif;
+      color: var(--cream-text);
+      font-family: 'Montserrat', Arial, sans-serif;
     }
 
     .nav {
-      background: #070707;
-      border-bottom: 1px solid rgba(214, 181, 109, 0.45);
+      background: #050505;
+      border-bottom: 1px solid rgba(214,181,109,0.42);
       padding: 18px 6%;
       display: flex;
       align-items: center;
@@ -37,216 +42,308 @@
       gap: 24px;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
     }
 
     .brand {
       color: var(--gold);
-      font-family: Georgia, 'Times New Roman', serif;
-      letter-spacing: 5px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: 7px;
       text-transform: uppercase;
       font-size: 15px;
       white-space: nowrap;
+      font-weight: 600;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 30px;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
     .nav-links a {
-      color: #f3e5bd;
+      color: #f2e1b3;
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       font-size: 12px;
+      font-weight: 500;
     }
 
     .nav-links a:hover {
-      color: var(--gold);
+      color: var(--bright-gold);
     }
 
-    .hero {
-      background: var(--black);
-      padding: 0;
+    .hero-wrap {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.16), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(214,181,109,0.14), transparent 34%),
+        linear-gradient(135deg, #0a0a09 0%, #050505 70%);
+      padding: 62px 7% 72px;
+      border-bottom: 1px solid rgba(214,181,109,0.45);
+      text-align: center;
     }
 
-    .hero img {
+    .hero-image {
+      max-width: 1180px;
+      margin: 0 auto;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(#070707, #070707) padding-box,
+        linear-gradient(
+          135deg,
+          rgba(214,181,109,0.18),
+          rgba(255,235,170,0.85),
+          rgba(155,116,47,0.32),
+          rgba(214,181,109,0.78),
+          rgba(80,55,20,0.25)
+        ) border-box;
+      box-shadow:
+        0 28px 75px rgba(0,0,0,0.55),
+        0 0 38px rgba(214,181,109,0.10),
+        inset 0 0 45px rgba(214,181,109,0.035);
+      overflow: hidden;
+    }
+
+    .hero-image img {
       width: 100%;
       display: block;
       height: auto;
     }
 
-    .ivory-section {
+    .intro {
       background:
-        radial-gradient(circle at top right, rgba(214,181,109,0.16), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(214,181,109,0.14), transparent 35%),
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 26%),
         var(--soft-ivory);
-      padding: 80px 8%;
+      color: var(--text-dark);
       text-align: center;
-      border-top: 1px solid rgba(214, 181, 109, 0.45);
-      border-bottom: 1px solid rgba(214, 181, 109, 0.45);
+      padding: 64px 8% 68px;
+      border-bottom: 1px solid rgba(156,121,56,0.35);
     }
 
-    .eyebrow {
+    .small {
       color: var(--deep-gold);
       text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: 13px;
-      margin-bottom: 18px;
+      letter-spacing: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
     }
 
     h1, h2, h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-weight: normal;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700;
     }
 
-    h1 {
+    .intro h1 {
       color: var(--deep-gold);
-      font-size: clamp(40px, 6vw, 76px);
-      margin: 0 0 20px;
+      font-size: clamp(46px, 6vw, 82px);
+      line-height: 1;
+      margin: 0 0 24px;
+      letter-spacing: 0.3px;
     }
 
-    .intro-text {
-      max-width: 860px;
+    .intro p {
+      max-width: 900px;
       margin: 0 auto;
-      font-size: 19px;
-      line-height: 1.8;
-      color: #222;
+      font-size: 17px;
+      line-height: 1.85;
+      color: #2b261c;
+      font-weight: 400;
     }
 
-    .services {
+    .preview {
       background: var(--black);
-      padding: 80px 8%;
-      color: var(--ivory);
+      padding: 76px 7% 88px;
     }
 
-    .services h2 {
+    .section-title {
       text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .section-title .small {
       color: var(--gold);
-      font-size: clamp(36px, 5vw, 66px);
-      margin: 0 0 18px;
     }
 
-    .services .sub {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 50px;
-      color: #e9ddc0;
-      font-size: 18px;
-      line-height: 1.7;
+    .section-title h2 {
+      color: var(--gold);
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 1;
+      margin: 0;
+      text-shadow: 0 0 18px rgba(214,181,109,0.16);
     }
 
-    .grid {
-      max-width: 1120px;
+    .card-grid {
+      max-width: 1220px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 26px;
     }
 
     .card {
-      border: 1px solid rgba(214,181,109,0.55);
-      padding: 30px 24px;
-      min-height: 230px;
-      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(198,161,90,0.42);
+      padding: 42px 32px 34px;
+      min-height: 305px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.006));
+      box-shadow:
+        0 22px 55px rgba(0,0,0,0.42),
+        inset 0 0 0 1px rgba(255,255,255,0.015);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card h3 {
       color: var(--gold);
-      font-size: 26px;
-      margin: 0 0 15px;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 18px;
+      letter-spacing: 0.3px;
+    }
+
+    .card h3::before {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: rgba(198,161,90,0.85);
+      margin-bottom: 18px;
+    }
+
+    .card h3::after {
+      content: "";
+      display: block;
+      width: 92px;
+      height: 1px;
+      background: linear-gradient(to right, rgba(198,161,90,0.95), rgba(198,161,90,0.08));
+      margin: 20px 0 20px;
     }
 
     .card p {
-      color: #f1e8d2;
-      line-height: 1.65;
-      margin: 0 0 24px;
-      font-size: 15px;
+      color: #e9ddc8;
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.75;
+      margin: 0 0 28px;
     }
 
     .button {
       display: inline-block;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      width: fit-content;
+      border: 1px solid rgba(198,161,90,0.9);
+      color: var(--bright-gold);
+      background:
+        linear-gradient(145deg, rgba(214,181,109,0.10), rgba(0,0,0,0.15));
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 3.5px;
       font-size: 11px;
-      padding: 12px 18px;
+      font-weight: 500;
+      padding: 14px 22px;
+      box-shadow:
+        0 10px 22px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        inset 0 -1px 0 rgba(0,0,0,0.45);
+      transition: all 0.22s ease;
     }
 
     .button:hover {
-      background: var(--gold);
-      color: var(--black);
+      background:
+        linear-gradient(145deg, #d6b56d, #9b742f);
+      color: #060606;
+      border-color: #d6b56d;
+      transform: translateY(-2px);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.55),
+        0 0 18px rgba(214,181,109,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.28);
     }
 
     .cta {
       background: var(--soft-ivory);
-      padding: 70px 8%;
+      color: var(--text-dark);
       text-align: center;
+      padding: 72px 8%;
+      border-top: 1px solid rgba(156,121,56,0.35);
     }
 
     .cta h2 {
       color: var(--deep-gold);
-      font-size: clamp(34px, 5vw, 58px);
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1;
       margin: 0 0 18px;
     }
 
     .cta p {
-      max-width: 740px;
+      max-width: 760px;
       margin: 0 auto 30px;
-      line-height: 1.7;
-      font-size: 18px;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #2b261c;
+      font-weight: 400;
     }
 
     .cta .button {
-      color: var(--deep-gold);
-      border-color: var(--deep-gold);
+      color: #8f6b2d;
+      border-color: #9b742f;
+      background: linear-gradient(145deg, rgba(214,181,109,0.18), rgba(255,255,255,0.45));
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.55);
     }
 
     .cta .button:hover {
-      background: var(--deep-gold);
-      color: var(--soft-ivory);
+      background: linear-gradient(145deg, #d6b56d, #9b742f);
+      color: #060606;
     }
 
     footer {
-      background: #070707;
+      background: #050505;
       color: var(--gold);
       text-align: center;
-      padding: 28px 20px;
+      padding: 30px 20px;
       letter-spacing: 4px;
       text-transform: uppercase;
       font-size: 12px;
       border-top: 1px solid rgba(214,181,109,0.45);
     }
 
-    @media (max-width: 900px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .grid {
+    @media (max-width: 1050px) {
+      .card-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 560px) {
-      .grid {
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .card-grid {
         grid-template-columns: 1fr;
       }
 
-      .ivory-section,
-      .services,
+      .hero-wrap,
+      .intro,
+      .preview,
       .cta {
-        padding: 55px 7%;
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .brand {
+        letter-spacing: 4px;
+        font-size: 13px;
       }
     }
   </style>
@@ -258,71 +355,91 @@
 
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
-  <header class="hero">
-    <img src="assets/home-hero.png" alt="Curiel Brand Studios luxury consulting and design firm">
+  <header class="hero-wrap">
+    <div class="hero-image">
+      <img src="assets/home-hero.png" alt="Curiel Brand Studios logo">
+    </div>
   </header>
 
-  <section class="ivory-section">
-    <div class="eyebrow">Curiel Consulting x The Artful Eight</div>
+  <section class="intro">
+    <div class="small">Curiel Consulting x The Artful Eight</div>
     <h1>Strategy Meets Elevated Design</h1>
-    <p class="intro-text">
+    <p>
       Curiel Brand Studios blends business consulting, brand development, digital presence,
       marketing materials, and polished client-facing documents for entrepreneurs,
       real estate professionals, and service-based brands ready to look refined and operate with clarity.
     </p>
   </section>
 
-  <section class="services" id="services">
-    <h2>Services</h2>
-    <p class="sub">
-      Choose the service path that best fits your current stage. Each project is structured to feel polished,
-      organized, and intentionally designed around your business needs.
-    </p>
+  <section class="preview">
+    <div class="section-title">
+      <div class="small">Core Service Areas</div>
+      <h2>What We Help You Build</h2>
+    </div>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Business Setup</h3>
-        <p>Administrative support, formation research assistance, launch planning, domain direction, and business organization.</p>
-        <a class="button" href="#">View Service</a>
-      </div>
+    <div class="card-grid">
+      <article class="card">
+        <div>
+          <h3>Business Setup</h3>
+          <p>
+            Administrative structure, formation research assistance, launch planning,
+            domain direction, and organized setup support.
+          </p>
+        </div>
+        <a class="button" href="services.html">View Services</a>
+      </article>
 
-      <div class="card">
-        <h3>Branding & Design</h3>
-        <p>Visual identity direction, logo refinement, luxury documents, Canva systems, and brand styling.</p>
-        <a class="button" href="#">View Service</a>
-      </div>
+      <article class="card">
+        <div>
+          <h3>Branding & Design</h3>
+          <p>
+            Visual identity direction, luxury design systems, branded PDFs,
+            Canva materials, and polished presentation assets.
+          </p>
+        </div>
+        <a class="button" href="services.html">View Services</a>
+      </article>
 
-      <div class="card">
-        <h3>Marketing Materials</h3>
-        <p>Client-facing PDFs, service menus, proposals, intake forms, welcome packets, and branded presentations.</p>
-        <a class="button" href="#">View Service</a>
-      </div>
+      <article class="card">
+        <div>
+          <h3>Digital Presence</h3>
+          <p>
+            Canva websites, Google Sites styling, link-in-bio pages,
+            landing pages, QR pages, and online service hubs.
+          </p>
+        </div>
+        <a class="button" href="services.html">View Services</a>
+      </article>
 
-      <div class="card">
-        <h3>Websites & Digital Pages</h3>
-        <p>Canva websites, Google Sites styling, Linktree-style pages, QR landing pages, and digital business pages.</p>
-        <a class="button" href="#">View Service</a>
-      </div>
+      <article class="card">
+        <div>
+          <h3>Client Materials</h3>
+          <p>
+            Service menus, proposals, intake forms, client welcome packs,
+            contract styling, and branded marketing documents.
+          </p>
+        </div>
+        <a class="button" href="services.html">View Services</a>
+      </article>
     </div>
   </section>
 
-  <section class="cta" id="contact">
+  <section class="cta">
     <h2>Ready to Build a Polished Brand Presence?</h2>
     <p>
       Start with a consultation or project inquiry so we can determine the best service path,
       timeline, and creative direction for your business.
     </p>
-    <a class="button" href="mailto:hello@curielconsulting.com">Book a Consultation</a>
+    <a class="button" href="contact.html">Start a Project Inquiry</a>
   </section>
 
   <footer>
-    curielconsulting.com • Strategy • Branding • Design • Digital Presence
+    curielconsulting.com • Curiel Brand Studios
   </footer>
 </body>
 </html>
