@@ -6,135 +6,323 @@
   <title>Curiel Brand Studios</title>
 
   <style>
+    :root {
+      --black: #090909;
+      --charcoal: #121212;
+      --ivory: #f5efe4;
+      --soft-ivory: #fbf7ee;
+      --gold: #d6b56d;
+      --deep-gold: #9c7938;
+      --text-dark: #1b1b1b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #0b0b0b;
-      color: #d6b56d;
-      font-family: Georgia, 'Times New Roman', serif;
-      text-align: center;
+      background: var(--black);
+      color: var(--text-dark);
+      font-family: Arial, sans-serif;
     }
 
-    .page {
-      min-height: 100vh;
+    .nav {
+      background: #070707;
+      border-bottom: 1px solid rgba(214, 181, 109, 0.45);
+      padding: 18px 6%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
-      background:
-        radial-gradient(circle at top right, rgba(214,181,109,0.20), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(214,181,109,0.18), transparent 35%),
-        #0b0b0b;
+      justify-content: space-between;
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
 
-    .frame {
-      width: 100%;
-      max-width: 1150px;
-      border: 1px solid rgba(214,181,109,0.68);
-      padding: 55px 40px 70px;
-      box-sizing: border-box;
-    }
-
-    .logo {
-      width: min(520px, 80%);
-      height: auto;
-      margin: 0 auto 35px;
-      display: block;
-    }
-
-    .small {
-      letter-spacing: 8px;
+    .brand {
+      color: var(--gold);
+      font-family: Georgia, 'Times New Roman', serif;
+      letter-spacing: 5px;
       text-transform: uppercase;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #f3e5bd;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: var(--black);
+      padding: 0;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .ivory-section {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.16), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(214,181,109,0.14), transparent 35%),
+        var(--soft-ivory);
+      padding: 80px 8%;
+      text-align: center;
+      border-top: 1px solid rgba(214, 181, 109, 0.45);
+      border-bottom: 1px solid rgba(214, 181, 109, 0.45);
+    }
+
+    .eyebrow {
+      color: var(--deep-gold);
+      text-transform: uppercase;
+      letter-spacing: 5px;
       font-size: 13px;
-      margin-bottom: 22px;
-      color: #c8a75d;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: normal;
     }
 
     h1 {
-      font-size: clamp(46px, 7vw, 90px);
-      font-weight: normal;
+      color: var(--deep-gold);
+      font-size: clamp(40px, 6vw, 76px);
+      margin: 0 0 20px;
+    }
+
+    .intro-text {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 19px;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    .services {
+      background: var(--black);
+      padding: 80px 8%;
+      color: var(--ivory);
+    }
+
+    .services h2 {
+      text-align: center;
+      color: var(--gold);
+      font-size: clamp(36px, 5vw, 66px);
       margin: 0 0 18px;
-      color: #d6b56d;
-      text-shadow: 0 0 18px rgba(214,181,109,0.24);
     }
 
-    h2 {
-      font-size: clamp(22px, 3vw, 36px);
-      font-weight: normal;
-      margin: 0 0 32px;
-      color: #f1e2b8;
-    }
-
-    p {
+    .services .sub {
+      text-align: center;
       max-width: 760px;
-      margin: 0 auto 35px;
-      font-family: Arial, sans-serif;
+      margin: 0 auto 50px;
+      color: #e9ddc0;
       font-size: 18px;
       line-height: 1.7;
-      color: #f5f0e6;
     }
 
-    .buttons {
-      display: flex;
+    .grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 35px;
     }
 
-    a {
-      color: #d6b56d;
-      border: 1px solid #d6b56d;
-      padding: 14px 28px;
+    .card {
+      border: 1px solid rgba(214,181,109,0.55);
+      padding: 30px 24px;
+      min-height: 230px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .card h3 {
+      color: var(--gold);
+      font-size: 26px;
+      margin: 0 0 15px;
+    }
+
+    .card p {
+      color: #f1e8d2;
+      line-height: 1.65;
+      margin: 0 0 24px;
+      font-size: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
       text-decoration: none;
       text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      padding: 12px 18px;
+    }
+
+    .button:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .cta {
+      background: var(--soft-ivory);
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: var(--deep-gold);
+      font-size: clamp(34px, 5vw, 58px);
+      margin: 0 0 18px;
+    }
+
+    .cta p {
+      max-width: 740px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .cta .button {
+      color: var(--deep-gold);
+      border-color: var(--deep-gold);
+    }
+
+    .cta .button:hover {
+      background: var(--deep-gold);
+      color: var(--soft-ivory);
+    }
+
+    footer {
+      background: #070707;
+      color: var(--gold);
+      text-align: center;
+      padding: 28px 20px;
       letter-spacing: 4px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-    }
-
-    a:hover {
-      background: #d6b56d;
-      color: #0b0b0b;
-    }
-
-    .footer {
-      margin-top: 55px;
-      font-family: Arial, sans-serif;
-      letter-spacing: 6px;
       text-transform: uppercase;
       font-size: 12px;
-      color: #c8a75d;
+      border-top: 1px solid rgba(214,181,109,0.45);
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ivory-section,
+      .services,
+      .cta {
+        padding: 55px 7%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <section class="frame">
-      <img class="logo" src="assets/cclogo%20thumb.png" alt="Curiel Consulting in partnership with The Artful Eight logo">
+  <nav class="nav">
+    <div class="brand">Curiel Brand Studios</div>
 
-      <div class="small">Curiel Consulting x The Artful Eight</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-      <h1>Curiel Brand Studios</h1>
+  <header class="hero">
+    <img src="assets/home-hero.png" alt="Curiel Brand Studios luxury consulting and design firm">
+  </header>
 
-      <h2>Luxury Consulting & Design for Modern Brands</h2>
+  <section class="ivory-section">
+    <div class="eyebrow">Curiel Consulting x The Artful Eight</div>
+    <h1>Strategy Meets Elevated Design</h1>
+    <p class="intro-text">
+      Curiel Brand Studios blends business consulting, brand development, digital presence,
+      marketing materials, and polished client-facing documents for entrepreneurs,
+      real estate professionals, and service-based brands ready to look refined and operate with clarity.
+    </p>
+  </section>
 
-      <p>
-        Strategic consulting, brand development, websites, digital pages,
-        marketing materials, and polished client-facing business documents
-        designed with clarity, elegance, and purpose.
-      </p>
+  <section class="services" id="services">
+    <h2>Services</h2>
+    <p class="sub">
+      Choose the service path that best fits your current stage. Each project is structured to feel polished,
+      organized, and intentionally designed around your business needs.
+    </p>
 
-      <div class="buttons">
-        <a href="#">View Services</a>
-        <a href="mailto:hello@curielconsulting.com">Book a Consultation</a>
+    <div class="grid">
+      <div class="card">
+        <h3>Business Setup</h3>
+        <p>Administrative support, formation research assistance, launch planning, domain direction, and business organization.</p>
+        <a class="button" href="#">View Service</a>
       </div>
 
-      <div class="footer">
-        Strategy • Branding • Design • Digital Presence
+      <div class="card">
+        <h3>Branding & Design</h3>
+        <p>Visual identity direction, logo refinement, luxury documents, Canva systems, and brand styling.</p>
+        <a class="button" href="#">View Service</a>
       </div>
-    </section>
-  </main>
+
+      <div class="card">
+        <h3>Marketing Materials</h3>
+        <p>Client-facing PDFs, service menus, proposals, intake forms, welcome packets, and branded presentations.</p>
+        <a class="button" href="#">View Service</a>
+      </div>
+
+      <div class="card">
+        <h3>Websites & Digital Pages</h3>
+        <p>Canva websites, Google Sites styling, Linktree-style pages, QR landing pages, and digital business pages.</p>
+        <a class="button" href="#">View Service</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <h2>Ready to Build a Polished Brand Presence?</h2>
+    <p>
+      Start with a consultation or project inquiry so we can determine the best service path,
+      timeline, and creative direction for your business.
+    </p>
+    <a class="button" href="mailto:hello@curielconsulting.com">Book a Consultation</a>
+  </section>
+
+  <footer>
+    curielconsulting.com • Strategy • Branding • Design • Digital Presence
+  </footer>
 </body>
 </html>
