@@ -7,14 +7,15 @@
 
   <style>
     :root {
-      --black: #080808;
-      --charcoal: #111111;
+      --black: #060606;
+      --charcoal: #10100f;
       --ivory: #f7f1e6;
-      --soft-ivory: #fbf7ee;
+      --soft-ivory: #fbf7ef;
       --gold: #d6b56d;
-      --deep-gold: #9c7938;
-      --text-dark: #1c1c1c;
-      --muted: #f1e8d2;
+      --deep-gold: #9a7a38;
+      --muted-gold: #b9964f;
+      --text-dark: #181818;
+      --cream-text: #f3ead5;
     }
 
     * {
@@ -24,13 +25,13 @@
     body {
       margin: 0;
       background: var(--black);
-      color: var(--muted);
+      color: var(--cream-text);
       font-family: Arial, sans-serif;
     }
 
     .nav {
       background: #050505;
-      border-bottom: 1px solid rgba(214, 181, 109, 0.45);
+      border-bottom: 1px solid rgba(214,181,109,0.42);
       padding: 18px 6%;
       display: flex;
       align-items: center;
@@ -38,13 +39,13 @@
       gap: 24px;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
     }
 
     .brand {
       color: var(--gold);
       font-family: Georgia, 'Times New Roman', serif;
-      letter-spacing: 6px;
+      letter-spacing: 7px;
       text-transform: uppercase;
       font-size: 15px;
       white-space: nowrap;
@@ -52,13 +53,13 @@
 
     .nav-links {
       display: flex;
-      gap: 26px;
+      gap: 30px;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
     .nav-links a {
-      color: #f3e5bd;
+      color: #f2e1b3;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 4px;
@@ -69,33 +70,31 @@
       color: var(--gold);
     }
 
-    .hero {
-      min-height: 430px;
+    .hero-wrap {
       background:
-        radial-gradient(circle at top right, rgba(214,181,109,0.20), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(214,181,109,0.20), transparent 34%),
-        var(--black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 8%;
-      text-align: center;
+        radial-gradient(circle at top right, rgba(214,181,109,0.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(214,181,109,0.16), transparent 35%),
+        linear-gradient(135deg, #0a0a09 0%, #050505 70%);
+      padding: 70px 7% 78px;
       border-bottom: 1px solid rgba(214,181,109,0.45);
     }
 
-    .hero-inner {
-      width: 100%;
-      max-width: 1120px;
-      border: 1px solid rgba(214,181,109,0.62);
-      padding: 70px 40px;
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      border: 1px solid rgba(214,181,109,0.6);
+      padding: 72px 42px;
+      text-align: center;
+      background: rgba(0,0,0,0.28);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.45);
     }
 
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 6px;
+      letter-spacing: 7px;
       font-size: 13px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     h1, h2, h3 {
@@ -105,75 +104,121 @@
 
     h1 {
       color: var(--gold);
-      font-size: clamp(58px, 9vw, 120px);
-      margin: 0 0 20px;
-      text-shadow: 0 0 20px rgba(214,181,109,0.22);
+      font-size: clamp(68px, 10vw, 132px);
+      margin: 0 0 24px;
+      text-shadow: 0 0 22px rgba(214,181,109,0.25);
     }
 
     .hero p {
-      max-width: 800px;
+      max-width: 830px;
       margin: 0 auto;
-      color: #f7eed8;
-      font-size: 19px;
+      color: #f5ecd8;
+      font-size: 20px;
       line-height: 1.8;
     }
 
     .intro {
-      background: var(--soft-ivory);
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 26%),
+        var(--soft-ivory);
       color: var(--text-dark);
       text-align: center;
-      padding: 65px 8%;
+      padding: 66px 8%;
       border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .intro .small {
+      color: var(--deep-gold);
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 12px;
+      margin-bottom: 15px;
     }
 
     .intro h2 {
       color: var(--deep-gold);
-      font-size: clamp(34px, 5vw, 62px);
+      font-size: clamp(42px, 6vw, 74px);
       margin: 0 0 18px;
     }
 
     .intro p {
-      max-width: 840px;
+      max-width: 830px;
       margin: 0 auto;
       font-size: 18px;
       line-height: 1.8;
     }
 
-    .services {
-      padding: 80px 8%;
+    .directory {
       background: var(--black);
+      padding: 78px 7% 88px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 46px;
+    }
+
+    .section-title .small {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-title h2 {
+      color: var(--gold);
+      font-size: clamp(40px, 6vw, 72px);
+      margin: 0;
     }
 
     .service-grid {
-      max-width: 1180px;
+      max-width: 1220px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 24px;
     }
 
     .card {
-      border: 1px solid rgba(214,181,109,0.55);
-      padding: 34px 28px;
-      background: rgba(255,255,255,0.025);
-      min-height: 285px;
+      border: 1px solid rgba(214,181,109,0.52);
+      padding: 34px 30px 30px;
+      min-height: 300px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.008));
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(214,181,109,0.82);
+      background:
+        linear-gradient(145deg, rgba(214,181,109,0.07), rgba(255,255,255,0.012));
+    }
+
+    .card .number {
+      color: var(--muted-gold);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
     }
 
     .card h3 {
       color: var(--gold);
-      font-size: 30px;
+      font-size: 31px;
+      line-height: 1.08;
       margin: 0 0 16px;
-      line-height: 1.1;
     }
 
     .card p {
-      color: #f2e7cf;
+      color: #f3ead5;
       font-size: 15.5px;
-      line-height: 1.65;
-      margin: 0 0 25px;
+      line-height: 1.7;
+      margin: 0 0 28px;
     }
 
     .button {
@@ -183,9 +228,9 @@
       color: var(--gold);
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 3.5px;
       font-size: 11px;
-      padding: 13px 18px;
+      padding: 13px 19px;
     }
 
     .button:hover {
@@ -194,13 +239,44 @@
     }
 
     .note {
-      max-width: 900px;
-      margin: 60px auto 0;
+      max-width: 910px;
+      margin: 62px auto 0;
       text-align: center;
       color: #e9ddc0;
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.8;
       font-style: italic;
+    }
+
+    .contact-strip {
+      background: var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 72px 8%;
+      border-top: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .contact-strip h2 {
+      color: var(--deep-gold);
+      font-size: clamp(38px, 5vw, 66px);
+      margin: 0 0 18px;
+    }
+
+    .contact-strip p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .contact-strip .button {
+      color: var(--deep-gold);
+      border-color: var(--deep-gold);
+    }
+
+    .contact-strip .button:hover {
+      background: var(--deep-gold);
+      color: var(--soft-ivory);
     }
 
     footer {
@@ -214,14 +290,10 @@
       border-top: 1px solid rgba(214,181,109,0.45);
     }
 
-    @media (max-width: 950px) {
+    @media (max-width: 980px) {
       .nav {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
       }
 
       .service-grid {
@@ -229,18 +301,30 @@
       }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
       .service-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-inner {
-        padding: 50px 24px;
+      .hero {
+        padding: 54px 24px;
       }
 
+      .hero-wrap,
       .intro,
-      .services {
-        padding: 55px 7%;
+      .directory,
+      .contact-strip {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .brand {
+        letter-spacing: 4px;
+        font-size: 13px;
+      }
+
+      .nav-links {
+        gap: 18px;
       }
     }
   </style>
@@ -257,41 +341,49 @@
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-inner">
+  <header class="hero-wrap">
+    <section class="hero">
       <div class="eyebrow">Consulting • Branding • Design • Digital Presence</div>
       <h1>Services</h1>
       <p>
-        Polished strategy, branding, marketing, website, and client-facing document services
-        designed to help your business look elevated, organized, and ready for serious clients.
+        Polished service paths for entrepreneurs, real estate professionals, and service-based brands
+        that need strategy, structure, elevated visuals, and client-ready materials.
       </p>
-    </div>
+    </section>
   </header>
 
   <section class="intro">
+    <div class="small">Curiel Consulting x The Artful Eight</div>
     <h2>Choose Your Service Path</h2>
     <p>
       Every project begins with clarity. Select the area that best matches your current need,
-      then we will determine the proper scope, package, timeline, and deliverables for your business.
+      then we will determine the right scope, package, timeline, and creative direction for your business.
     </p>
   </section>
 
-  <main class="services">
+  <main class="directory">
+    <div class="section-title">
+      <div class="small">Service Directory</div>
+      <h2>What We Create</h2>
+    </div>
+
     <div class="service-grid">
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">01</div>
           <h3>Business Setup & Consulting</h3>
           <p>
-            Administrative support, business formation research assistance, launch planning,
+            Administrative support, formation research assistance, launch planning,
             domain direction, business address research, and setup organization.
           </p>
         </div>
         <a class="button" href="business-setup.html">View Service</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">02</div>
           <h3>Branding & Design Development</h3>
           <p>
             Visual identity direction, logo refinement, typography and color guidance,
@@ -299,10 +391,11 @@
           </p>
         </div>
         <a class="button" href="branding-design.html">View Service</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">03</div>
           <h3>Marketing Materials & Client PDFs</h3>
           <p>
             Service menus, proposals, brochures, welcome packets, intake forms,
@@ -310,10 +403,11 @@
           </p>
         </div>
         <a class="button" href="marketing-materials.html">View Service</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">04</div>
           <h3>Websites & Digital Pages</h3>
           <p>
             Canva websites, Google Sites styling, link-in-bio pages, QR landing pages,
@@ -321,10 +415,11 @@
           </p>
         </div>
         <a class="button" href="websites-digital-pages.html">View Service</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">05</div>
           <h3>Seller Branding Package</h3>
           <p>
             A polished real estate package including listing presentation design,
@@ -332,21 +427,23 @@
           </p>
         </div>
         <a class="button" href="seller-branding-package.html">View Package</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">06</div>
           <h3>Client Welcome Pack</h3>
           <p>
-            A branded onboarding document set designed to guide clients clearly
-            through next steps, expectations, process, and communication.
+            A branded onboarding document set designed to guide clients through
+            next steps, expectations, process, and communication.
           </p>
         </div>
         <a class="button" href="client-welcome-pack.html">View Package</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">07</div>
           <h3>Contract Styling Package</h3>
           <p>
             Design and formatting for existing agreement text, proposals, and contract-style
@@ -354,10 +451,11 @@
           </p>
         </div>
         <a class="button" href="contract-styling.html">View Package</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">08</div>
           <h3>Intake Form Design Package</h3>
           <p>
             Branded client questionnaires, service selection forms, project discovery forms,
@@ -365,10 +463,11 @@
           </p>
         </div>
         <a class="button" href="intake-form-design.html">View Package</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div>
+          <div class="number">09</div>
           <h3>Link-in-Bio Signature Page</h3>
           <p>
             A polished Linktree-style page with organized links, button structure,
@@ -376,7 +475,7 @@
           </p>
         </div>
         <a class="button" href="link-in-bio-page.html">View Package</a>
-      </div>
+      </article>
 
     </div>
 
@@ -385,6 +484,15 @@
       real estate materials, launch support, websites, and client-facing document suites.
     </p>
   </main>
+
+  <section class="contact-strip">
+    <h2>Need Help Choosing?</h2>
+    <p>
+      Start with an inquiry and we will help identify the best package or custom service path
+      for your business, timeline, and budget.
+    </p>
+    <a class="button" href="contact.html">Start a Project Inquiry</a>
+  </section>
 
   <footer>
     curielconsulting.com • Curiel Brand Studios
