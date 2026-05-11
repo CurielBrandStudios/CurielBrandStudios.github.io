@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Curiel Brand Studios</title>
+
+  <style>
+    :root {
+      --black: #080808;
+      --charcoal: #111111;
+      --ivory: #f7f1e6;
+      --soft-ivory: #fbf7ee;
+      --gold: #d6b56d;
+      --deep-gold: #9c7938;
+      --text-dark: #1c1c1c;
+      --muted: #f1e8d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+    }
+
+    .nav {
+      background: #050505;
+      border-bottom: 1px solid rgba(214, 181, 109, 0.45);
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .brand {
+      color: var(--gold);
+      font-family: Georgia, 'Times New Roman', serif;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #f3e5bd;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 430px;
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.20), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(214,181,109,0.20), transparent 34%),
+        var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 8%;
+      text-align: center;
+      border-bottom: 1px solid rgba(214,181,109,0.45);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1120px;
+      border: 1px solid rgba(214,181,109,0.62);
+      padding: 70px 40px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-size: clamp(58px, 9vw, 120px);
+      margin: 0 0 20px;
+      text-shadow: 0 0 20px rgba(214,181,109,0.22);
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #f7eed8;
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .intro {
+      background: var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 65px 8%;
+      border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .intro h2 {
+      color: var(--deep-gold);
+      font-size: clamp(34px, 5vw, 62px);
+      margin: 0 0 18px;
+    }
+
+    .intro p {
+      max-width: 840px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .services {
+      padding: 80px 8%;
+      background: var(--black);
+    }
+
+    .service-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      border: 1px solid rgba(214,181,109,0.55);
+      padding: 34px 28px;
+      background: rgba(255,255,255,0.025);
+      min-height: 285px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      font-size: 30px;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .card p {
+      color: #f2e7cf;
+      font-size: 15.5px;
+      line-height: 1.65;
+      margin: 0 0 25px;
+    }
+
+    .button {
+      display: inline-block;
+      width: fit-content;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      padding: 13px 18px;
+    }
+
+    .button:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 60px auto 0;
+      text-align: center;
+      color: #e9ddc0;
+      font-size: 17px;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    footer {
+      background: #050505;
+      color: var(--gold);
+      text-align: center;
+      padding: 28px 20px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 12px;
+      border-top: 1px solid rgba(214,181,109,0.45);
+    }
+
+    @media (max-width: 950px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        padding: 50px 24px;
+      }
+
+      .intro,
+      .services {
+        padding: 55px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="brand">Curiel Brand Studios</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Consulting • Branding • Design • Digital Presence</div>
+      <h1>Services</h1>
+      <p>
+        Polished strategy, branding, marketing, website, and client-facing document services
+        designed to help your business look elevated, organized, and ready for serious clients.
+      </p>
+    </div>
+  </header>
+
+  <section class="intro">
+    <h2>Choose Your Service Path</h2>
+    <p>
+      Every project begins with clarity. Select the area that best matches your current need,
+      then we will determine the proper scope, package, timeline, and deliverables for your business.
+    </p>
+  </section>
+
+  <main class="services">
+    <div class="service-grid">
+
+      <div class="card">
+        <div>
+          <h3>Business Setup & Consulting</h3>
+          <p>
+            Administrative support, business formation research assistance, launch planning,
+            domain direction, business address research, and setup organization.
+          </p>
+        </div>
+        <a class="button" href="business-setup.html">View Service</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Branding & Design Development</h3>
+          <p>
+            Visual identity direction, logo refinement, typography and color guidance,
+            luxury document styling, Canva systems, and brand presentation support.
+          </p>
+        </div>
+        <a class="button" href="branding-design.html">View Service</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Marketing Materials & Client PDFs</h3>
+          <p>
+            Service menus, proposals, brochures, welcome packets, intake forms,
+            branded PDFs, flyers, and client-facing business materials.
+          </p>
+        </div>
+        <a class="button" href="marketing-materials.html">View Service</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Websites & Digital Pages</h3>
+          <p>
+            Canva websites, Google Sites styling, link-in-bio pages, QR landing pages,
+            contact pages, digital business pages, and online service hubs.
+          </p>
+        </div>
+        <a class="button" href="websites-digital-pages.html">View Service</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Seller Branding Package</h3>
+          <p>
+            A polished real estate package including listing presentation design,
+            listing resume design, copy refinement, and branded Canva plus PDF delivery.
+          </p>
+        </div>
+        <a class="button" href="seller-branding-package.html">View Package</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Client Welcome Pack</h3>
+          <p>
+            A branded onboarding document set designed to guide clients clearly
+            through next steps, expectations, process, and communication.
+          </p>
+        </div>
+        <a class="button" href="client-welcome-pack.html">View Package</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Contract Styling Package</h3>
+          <p>
+            Design and formatting for existing agreement text, proposals, and contract-style
+            documents that need a polished luxury presentation.
+          </p>
+        </div>
+        <a class="button" href="contract-styling.html">View Package</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Intake Form Design Package</h3>
+          <p>
+            Branded client questionnaires, service selection forms, project discovery forms,
+            and editable intake layouts for smoother onboarding.
+          </p>
+        </div>
+        <a class="button" href="intake-form-design.html">View Package</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Link-in-Bio Signature Page</h3>
+          <p>
+            A polished Linktree-style page with organized links, button structure,
+            bio copy, profile styling, and branded visual direction.
+          </p>
+        </div>
+        <a class="button" href="link-in-bio-page.html">View Package</a>
+      </div>
+
+    </div>
+
+    <p class="note">
+      Custom service combinations are available for larger projects, multi-page brand systems,
+      real estate materials, launch support, websites, and client-facing document suites.
+    </p>
+  </main>
+
+  <footer>
+    curielconsulting.com • Curiel Brand Studios
+  </footer>
+</body>
+</html>
