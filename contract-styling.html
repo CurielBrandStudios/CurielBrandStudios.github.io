@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contract Styling Package | Curiel Brand Studios</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #060606;
+      --ivory: #f7f1e6;
+      --soft-ivory: #fbf7ef;
+      --gold: #c6a15a;
+      --bright-gold: #d6b56d;
+      --deep-gold: #8f6b2d;
+      --muted-gold: #9b742f;
+      --text-dark: #181818;
+      --cream-text: #f3ead5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--cream-text);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    .nav {
+      background: #050505;
+      border-bottom: 1px solid rgba(214,181,109,0.42);
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .brand {
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      font-size: 15px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #f2e1b3;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--bright-gold);
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(214,181,109,0.16), transparent 35%),
+        linear-gradient(135deg, #0a0a09 0%, #050505 70%);
+      padding: 70px 7% 78px;
+      border-bottom: 1px solid rgba(214,181,109,0.45);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 42px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(#070707, #070707) padding-box,
+        linear-gradient(
+          135deg,
+          rgba(214,181,109,0.18),
+          rgba(255,235,170,0.85),
+          rgba(155,116,47,0.32),
+          rgba(214,181,109,0.78),
+          rgba(80,55,20,0.25)
+        ) border-box;
+      box-shadow:
+        0 28px 75px rgba(0,0,0,0.55),
+        0 0 38px rgba(214,181,109,0.10),
+        inset 0 0 45px rgba(214,181,109,0.035);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(214,181,109,0.18);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -35%;
+      left: -20%;
+      width: 55%;
+      height: 170%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,235,170,0.045),
+        transparent
+      );
+      transform: rotate(18deg);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-size: clamp(50px, 7vw, 96px);
+      line-height: 0.98;
+      margin: 0 0 24px;
+      text-shadow: 0 0 22px rgba(214,181,109,0.25);
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #f5ecd8;
+      font-size: 18px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .intro {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 26%),
+        var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 62px 8% 66px;
+      border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .intro .small,
+    .fit .small,
+    .section-title .small {
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .intro .small,
+    .fit .small {
+      color: var(--deep-gold);
+    }
+
+    .intro h2,
+    .fit h2,
+    .notice h2 {
+      color: var(--deep-gold);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1;
+      margin: 0 0 18px;
+    }
+
+    .intro p,
+    .fit p,
+    .notice p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #2b261c;
+      font-weight: 400;
+    }
+
+    .details {
+      background: var(--black);
+      padding: 78px 7% 88px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .section-title .small {
+      color: var(--gold);
+    }
+
+    .section-title h2 {
+      color: var(--gold);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1;
+      margin: 0;
+      text-shadow: 0 0 18px rgba(214,181,109,0.16);
+    }
+
+    .section-sub {
+      max-width: 850px;
+      margin: 20px auto 0;
+      color: #e9ddc8;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      border: 1px solid rgba(198,161,90,0.42);
+      padding: 48px 38px 38px;
+      min-height: 390px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.006));
+      box-shadow:
+        0 22px 55px rgba(0,0,0,0.42),
+        inset 0 0 0 1px rgba(255,255,255,0.015);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 18px;
+      letter-spacing: 0.3px;
+    }
+
+    .card h3::before {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: rgba(198,161,90,0.85);
+      margin-bottom: 18px;
+    }
+
+    .card h3::after {
+      content: "";
+      display: block;
+      width: 92px;
+      height: 1px;
+      background: linear-gradient(to right, rgba(198,161,90,0.95), rgba(198,161,90,0.08));
+      margin: 20px 0 20px;
+    }
+
+    .card p,
+    .card li {
+      color: #e9ddc8;
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .card p {
+      margin: 0 0 20px;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .price-band {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 26%),
+        var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 66px 8% 70px;
+      border-top: 1px solid rgba(156,121,56,0.35);
+      border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .price-band h2 {
+      color: var(--deep-gold);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1;
+      margin: 0 0 18px;
+    }
+
+    .price {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--deep-gold);
+      font-size: clamp(48px, 6vw, 86px);
+      font-weight: 700;
+      margin: 18px 0;
+    }
+
+    .price-band p {
+      max-width: 880px;
+      margin: 0 auto;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #2b261c;
+      font-weight: 400;
+    }
+
+    .fit {
+      background: var(--black);
+      color: var(--cream-text);
+      text-align: center;
+      padding: 70px 8%;
+      border-bottom: 1px solid rgba(214,181,109,0.35);
+    }
+
+    .fit h2 {
+      color: var(--gold);
+    }
+
+    .fit p {
+      color: #e9ddc8;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .fit-list {
+      max-width: 1000px;
+      margin: 34px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .fit-item {
+      border: 1px solid rgba(198,161,90,0.42);
+      padding: 22px 18px;
+      color: #e9ddc8;
+      background: rgba(255,255,255,0.035);
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    }
+
+    .notice {
+      background: var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 70px 8%;
+      border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .notice p {
+      font-size: 15.5px;
+      max-width: 900px;
+    }
+
+    .cta {
+      background: var(--black);
+      text-align: center;
+      padding: 76px 8% 84px;
+    }
+
+    .cta h2 {
+      color: var(--gold);
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 1;
+      margin: 0 0 18px;
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      color: #e9ddc8;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .button {
+      display: inline-block;
+      width: fit-content;
+      border: 1px solid rgba(198,161,90,0.9);
+      color: var(--bright-gold);
+      background:
+        linear-gradient(145deg, rgba(214,181,109,0.10), rgba(0,0,0,0.15));
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3.5px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 14px 22px;
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+      transition: all 0.22s ease;
+    }
+
+    .button:hover {
+      background:
+        linear-gradient(145deg, #d6b56d, #9b742f);
+      color: #060606;
+      border-color: #d6b56d;
+      transform: translateY(-2px);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.55),
+        0 0 18px rgba(214,181,109,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.28);
+    }
+
+    footer {
+      background: #050505;
+      color: var(--gold);
+      text-align: center;
+      padding: 30px 20px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 12px;
+      border-top: 1px solid rgba(214,181,109,0.45);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .grid,
+      .fit-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 54px 24px;
+      }
+
+      .hero-wrap,
+      .intro,
+      .details,
+      .price-band,
+      .fit,
+      .notice,
+      .cta {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .brand {
+        letter-spacing: 4px;
+        font-size: 13px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="brand">Curiel Brand Studios</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero-wrap">
+    <section class="hero">
+      <div class="eyebrow">Agreement Styling • Document Design • Client-Ready PDFs</div>
+      <h1>Contract Styling Package</h1>
+      <p>
+        A polished design and formatting package for businesses that already have agreement,
+        proposal, or contract-style text and need it presented in a refined, branded, professional way.
+      </p>
+    </section>
+  </header>
+
+  <section class="intro">
+    <div class="small">Make Important Documents Look Professional</div>
+    <h2>Turn Plain Agreement Text Into a Polished Client Document</h2>
+    <p>
+      Your contract-style documents should feel organized, readable, and aligned with the level of professionalism
+      your business wants to communicate. This package does not draft legal language — it styles and formats
+      existing approved text into a branded, client-ready document.
+    </p>
+  </section>
+
+  <main class="details">
+    <div class="section-title">
+      <div class="small">Package Details</div>
+      <h2>What This Package Includes</h2>
+      <p class="section-sub">
+        The Contract Styling Package is designed for clients who already have agreement text,
+        proposal language, terms, or project details and want the final document to look elevated and easy to follow.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Cover Page Styling</h3>
+        <p>
+          A polished branded cover page that makes the document feel intentional from the first impression.
+        </p>
+        <ul>
+          <li>Luxury or professional cover page direction</li>
+          <li>Document title and client name placement</li>
+          <li>Brand-aligned typography and spacing</li>
+          <li>Logo placement and visual balance</li>
+          <li>PDF-ready presentation styling</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Interior Page Design</h3>
+        <p>
+          Clean interior formatting that makes agreement-style content easier to read, follow, and present.
+        </p>
+        <ul>
+          <li>Styled section headers</li>
+          <li>Readable paragraph formatting</li>
+          <li>Branded page borders or accents</li>
+          <li>Luxury ivory or light-page layout</li>
+          <li>Consistent page design throughout</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Content Organization</h3>
+        <p>
+          Structural support for making long agreement text feel more organized and client-friendly.
+        </p>
+        <ul>
+          <li>Section order cleanup</li>
+          <li>Visual hierarchy improvement</li>
+          <li>Pricing and payment sections formatted clearly</li>
+          <li>Timeline and deliverable sections organized</li>
+          <li>Signature and approval areas styled</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Brand Consistency</h3>
+        <p>
+          Design styling that helps the document match the rest of your business materials.
+        </p>
+        <ul>
+          <li>Color and typography alignment</li>
+          <li>Logo and brand accent placement</li>
+          <li>Professional footer or closing page styling</li>
+          <li>Consistent document presentation</li>
+          <li>Visual tone matched to your brand direction</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Delivery Files</h3>
+        <p>
+          Final styled documents prepared for client review, presentation, and delivery.
+        </p>
+        <ul>
+          <li>Styled PDF export</li>
+          <li>Editable source file when applicable</li>
+          <li>Organized final layout</li>
+          <li>Print or digital delivery direction</li>
+          <li>Basic delivery file organization</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Project Limits</h3>
+        <p>
+          This package is for design, layout, formatting, and presentation only.
+        </p>
+        <ul>
+          <li>Does not include legal drafting</li>
+          <li>Does not include legal review</li>
+          <li>Client must provide existing approved text</li>
+          <li>Up to 8 pages included</li>
+          <li>Additional pages may require separate pricing</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <section class="price-band">
+    <h2>Package Investment</h2>
+    <div class="price">$300</div>
+    <p>
+      Includes styled cover page, branded interior formatting, section organization,
+      PDF export, and design presentation for existing agreement or contract-style text up to 8 pages.
+    </p>
+  </section>
+
+  <section class="fit">
+    <div class="small">Client Fit</div>
+    <h2>Who This Is Best For</h2>
+    <p>
+      This package is ideal for businesses that already have contract, proposal, or agreement text,
+      but need the document to look more polished, professional, and aligned with their brand.
+    </p>
+
+    <div class="fit-list">
+      <div class="fit-item">Service providers with plain agreement text</div>
+      <div class="fit-item">Consultants who need polished proposal documents</div>
+      <div class="fit-item">Small businesses sending client-facing terms</div>
+      <div class="fit-item">Creatives and designers presenting project agreements</div>
+      <div class="fit-item">Businesses that need branded PDF formatting</div>
+      <div class="fit-item">Clients who want a more professional document presentation</div>
+    </div>
+  </section>
+
+  <section class="notice">
+    <h2>Professional Scope Notice</h2>
+    <p>
+      Curiel Brand Studios provides design styling, formatting, layout, brand presentation,
+      and document organization support. This package does not include legal drafting, legal review,
+      legal advice, tax advice, accounting services, brokerage compliance review, or licensed professional advice.
+      Clients are responsible for having all agreement language reviewed by the appropriate professional before use.
+    </p>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Style Your Agreement?</h2>
+    <p>
+      Start with a project inquiry so we can understand the document type, page count,
+      brand direction, and whether your text is ready for styling.
+    </p>
+    <a class="button" href="https://forms.gle/HdjUF1TaJjVHj6BK8" target="_blank">Start Project Inquiry</a>
+  </section>
+
+  <footer>
+    curielconsulting.com • Curiel Brand Studios
+  </footer>
+</body>
+</html>
