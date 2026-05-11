@@ -178,17 +178,17 @@ font-family: 'Cormorant Garamond', Georgia, serif;      letter-spacing: 7px;
       gap: 24px;
     }
 
-    .card {
-      border: 1px solid rgba(214,181,109,0.52);
-      padding: 34px 30px 30px;
-      min-height: 300px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.008));
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
+   .card {
+  border: 1px solid rgba(214,181,109,0.52);
+  padding: 42px 34px 34px;
+  min-height: 310px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.008));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
 
     .card:hover {
       transform: translateY(-4px);
@@ -197,42 +197,44 @@ font-family: 'Cormorant Garamond', Georgia, serif;      letter-spacing: 7px;
         linear-gradient(145deg, rgba(214,181,109,0.07), rgba(255,255,255,0.012));
     }
 
-  .card h3::before {
+.card h3::after {
   content: "";
   display: block;
-  width: 38px;
+  width: 92px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(155,116,47,0.95), rgba(155,116,47,0.08));
+  margin: 20px 0 20px;
+}
+
+.card h3::before {
+  content: "";
+  display: block;
+  width: 36px;
   height: 1px;
   background: rgba(155,116,47,0.85);
   margin-bottom: 18px;
 }
+    
 
-.card h3::after {
-  content: "";
-  display: block;
-  width: 86px;
-  height: 1px;
-  background: linear-gradient(to right, rgba(155,116,47,0.95), rgba(155,116,47,0.12));
-  margin: 20px 0 18px;
-}
-    }
-
-    .card h3 {
-  color: var(--title-gold);
+   .card h3 {
+  color: #9b742f;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 34px;
+  font-size: 40px;
   font-weight: 700;
-  line-height: 1.02;
-  margin: 0 0 16px;
-  letter-spacing: 0.3px;
+  line-height: 1;
+  margin: 0 0 18px;
+  letter-spacing: 0.2px;
 }
     }
 
-    .card p {
-      color: #f3ead5;
-      font-size: 15.5px;
-      line-height: 1.7;
-      margin: 0 0 28px;
-    }
+   .card p {
+  color: #f1e8d2;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
 
     .button {
       display: inline-block;
