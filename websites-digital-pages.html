@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Websites & Digital Pages | Curiel Brand Studios</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #060606;
+      --ivory: #f7f1e6;
+      --soft-ivory: #fbf7ef;
+      --gold: #c6a15a;
+      --bright-gold: #d6b56d;
+      --deep-gold: #8f6b2d;
+      --muted-gold: #9b742f;
+      --text-dark: #181818;
+      --cream-text: #f3ead5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--cream-text);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    .nav {
+      background: #050505;
+      border-bottom: 1px solid rgba(214,181,109,0.42);
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .brand {
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      font-size: 15px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #f2e1b3;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--bright-gold);
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(214,181,109,0.16), transparent 35%),
+        linear-gradient(135deg, #0a0a09 0%, #050505 70%);
+      padding: 70px 7% 78px;
+      border-bottom: 1px solid rgba(214,181,109,0.45);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 42px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(#070707, #070707) padding-box,
+        linear-gradient(
+          135deg,
+          rgba(214,181,109,0.18),
+          rgba(255,235,170,0.85),
+          rgba(155,116,47,0.32),
+          rgba(214,181,109,0.78),
+          rgba(80,55,20,0.25)
+        ) border-box;
+      box-shadow:
+        0 28px 75px rgba(0,0,0,0.55),
+        0 0 38px rgba(214,181,109,0.10),
+        inset 0 0 45px rgba(214,181,109,0.035);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(214,181,109,0.18);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -35%;
+      left: -20%;
+      width: 55%;
+      height: 170%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,235,170,0.045),
+        transparent
+      );
+      transform: rotate(18deg);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-size: clamp(50px, 7vw, 96px);
+      line-height: 0.98;
+      margin: 0 0 24px;
+      text-shadow: 0 0 22px rgba(214,181,109,0.25);
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #f5ecd8;
+      font-size: 18px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .intro {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 26%),
+        var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 62px 8% 66px;
+      border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .intro .small,
+    .fit .small,
+    .section-title .small {
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .intro .small,
+    .fit .small {
+      color: var(--deep-gold);
+    }
+
+    .intro h2,
+    .fit h2,
+    .notice h2 {
+      color: var(--deep-gold);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1;
+      margin: 0 0 18px;
+    }
+
+    .intro p,
+    .fit p,
+    .notice p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #2b261c;
+      font-weight: 400;
+    }
+
+    .details {
+      background: var(--black);
+      padding: 78px 7% 88px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .section-title .small {
+      color: var(--gold);
+    }
+
+    .section-title h2 {
+      color: var(--gold);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1;
+      margin: 0;
+      text-shadow: 0 0 18px rgba(214,181,109,0.16);
+    }
+
+    .section-sub {
+      max-width: 850px;
+      margin: 20px auto 0;
+      color: #e9ddc8;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      border: 1px solid rgba(198,161,90,0.42);
+      padding: 48px 38px 38px;
+      min-height: 390px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.006));
+      box-shadow:
+        0 22px 55px rgba(0,0,0,0.42),
+        inset 0 0 0 1px rgba(255,255,255,0.015);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 18px;
+      letter-spacing: 0.3px;
+    }
+
+    .card h3::before {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: rgba(198,161,90,0.85);
+      margin-bottom: 18px;
+    }
+
+    .card h3::after {
+      content: "";
+      display: block;
+      width: 92px;
+      height: 1px;
+      background: linear-gradient(to right, rgba(198,161,90,0.95), rgba(198,161,90,0.08));
+      margin: 20px 0 20px;
+    }
+
+    .card p,
+    .card li {
+      color: #e9ddc8;
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .card p {
+      margin: 0 0 20px;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .fit {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 26%),
+        var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 66px 8% 70px;
+      border-top: 1px solid rgba(156,121,56,0.35);
+      border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .fit-list {
+      max-width: 1000px;
+      margin: 34px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .fit-item {
+      border: 1px solid rgba(143,107,45,0.42);
+      padding: 22px 18px;
+      color: #2b261c;
+      background: rgba(255,255,255,0.42);
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    }
+
+    .notice {
+      background: var(--black);
+      color: var(--cream-text);
+      text-align: center;
+      padding: 70px 8%;
+      border-bottom: 1px solid rgba(214,181,109,0.35);
+    }
+
+    .notice h2 {
+      color: var(--gold);
+    }
+
+    .notice p {
+      color: #e9ddc8;
+      font-size: 15.5px;
+      font-weight: 300;
+      max-width: 900px;
+    }
+
+    .cta {
+      background: var(--soft-ivory);
+      text-align: center;
+      padding: 76px 8% 84px;
+    }
+
+    .cta h2 {
+      color: var(--deep-gold);
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 1;
+      margin: 0 0 18px;
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      color: #2b261c;
+      font-size: 17px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .button {
+      display: inline-block;
+      width: fit-content;
+      border: 1px solid rgba(198,161,90,0.9);
+      color: #8f6b2d;
+      background: linear-gradient(145deg, rgba(214,181,109,0.18), rgba(255,255,255,0.45));
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3.5px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 14px 22px;
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.55);
+      transition: all 0.22s ease;
+    }
+
+    .button:hover {
+      background:
+        linear-gradient(145deg, #d6b56d, #9b742f);
+      color: #060606;
+      border-color: #d6b56d;
+      transform: translateY(-2px);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.35),
+        0 0 18px rgba(214,181,109,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.28);
+    }
+
+    footer {
+      background: #050505;
+      color: var(--gold);
+      text-align: center;
+      padding: 30px 20px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 12px;
+      border-top: 1px solid rgba(214,181,109,0.45);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .grid,
+      .fit-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 54px 24px;
+      }
+
+      .hero-wrap,
+      .intro,
+      .details,
+      .fit,
+      .notice,
+      .cta {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .brand {
+        letter-spacing: 4px;
+        font-size: 13px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="brand">Curiel Brand Studios</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero-wrap">
+    <section class="hero">
+      <div class="eyebrow">Websites • Landing Pages • Digital Presence</div>
+      <h1>Websites & Digital Pages</h1>
+      <p>
+        Polished digital pages for businesses that need a clear online presence,
+        organized links, service information, contact paths, and client-ready digital touchpoints.
+      </p>
+    </section>
+  </header>
+
+  <section class="intro">
+    <div class="small">Create a Digital Presence That Feels Intentional</div>
+    <h2>Simple Online Pages With a Polished Brand Feel</h2>
+    <p>
+      Your online presence should make it easy for clients to understand who you are, what you offer,
+      and how to take the next step. This service supports streamlined websites, landing pages, link-in-bio pages,
+      contact pages, and digital hubs that feel organized, elevated, and aligned with your brand.
+    </p>
+  </section>
+
+  <main class="details">
+    <div class="section-title">
+      <div class="small">How We Build Your Digital Presence</div>
+      <h2>Website & Digital Page Services</h2>
+      <p class="section-sub">
+        This service path is designed for businesses that need a professional online home without overcomplicating
+        the process. Projects may include simple websites, styled pages, digital link hubs, or client-facing landing pages.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Canva Websites</h3>
+        <p>
+          Design support for clean, branded Canva websites that help your business present information beautifully.
+        </p>
+        <ul>
+          <li>Single-page website design direction</li>
+          <li>Section planning and page flow</li>
+          <li>Brand styling and layout design</li>
+          <li>Service information organization</li>
+          <li>Mobile-friendly visual planning</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Google Sites Styling</h3>
+        <p>
+          Visual and structural support for making Google Sites feel more polished, organized, and brand-aligned.
+        </p>
+        <ul>
+          <li>Homepage structure and section planning</li>
+          <li>Service page organization</li>
+          <li>Brand color and typography direction</li>
+          <li>Simple navigation planning</li>
+          <li>Clean page layout recommendations</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Link-in-Bio Pages</h3>
+        <p>
+          Polished link pages that organize your most important client actions in one branded place.
+        </p>
+        <ul>
+          <li>Linktree-style page direction</li>
+          <li>Button and link organization</li>
+          <li>Bio copy and profile styling</li>
+          <li>Service and contact link structure</li>
+          <li>Visual styling for a stronger first impression</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>QR Landing Pages</h3>
+        <p>
+          Focused landing pages for print materials, business cards, flyers, menus, events, or client packets.
+        </p>
+        <ul>
+          <li>QR destination page planning</li>
+          <li>Contact and inquiry button setup direction</li>
+          <li>Service summary organization</li>
+          <li>Offer or package page structure</li>
+          <li>Client-friendly call-to-action flow</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Contact Pages</h3>
+        <p>
+          Clear contact pages that help potential clients know how to reach you and what to do next.
+        </p>
+        <ul>
+          <li>Contact section organization</li>
+          <li>Inquiry form link placement</li>
+          <li>Email and social link structure</li>
+          <li>Professional contact copy</li>
+          <li>Client next-step guidance</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Digital Business Hubs</h3>
+        <p>
+          Organized digital spaces that connect your services, links, forms, documents, and client resources.
+        </p>
+        <ul>
+          <li>Service hub planning</li>
+          <li>Digital resource organization</li>
+          <li>Client link and document direction</li>
+          <li>Simple online business page structure</li>
+          <li>Brand-aligned digital presentation</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <section class="fit">
+    <div class="small">Client Fit</div>
+    <h2>Who This Is Best For</h2>
+    <p>
+      This service is ideal for businesses that need a clean online presence, a better link page,
+      a simple website, or a polished digital destination for clients to understand services and take action.
+    </p>
+
+    <div class="fit-list">
+      <div class="fit-item">Service providers who need a simple website</div>
+      <div class="fit-item">Entrepreneurs who need a polished link-in-bio page</div>
+      <div class="fit-item">Brands using QR codes on printed materials</div>
+      <div class="fit-item">Businesses that need a client inquiry pathway</div>
+      <div class="fit-item">Real estate professionals building an online presence</div>
+      <div class="fit-item">Clients who need organized links, forms, and service pages</div>
+    </div>
+  </section>
+
+  <section class="notice">
+    <h2>Professional Scope Notice</h2>
+    <p>
+      Curiel Brand Studios provides digital presentation support, website styling, page structure,
+      brand direction, client-facing page design, and digital organization services. We do not provide legal,
+      tax, accounting, brokerage compliance, cybersecurity, domain registrar, hosting provider, or platform guarantee services.
+      Clients are responsible for maintaining platform accounts, subscriptions, domain ownership, and compliance needs.
+    </p>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Build a Polished Digital Presence?</h2>
+    <p>
+      Start with a project inquiry so we can understand what kind of page or website you need,
+      what platforms you prefer, and how clients should contact or book with you.
+    </p>
+    <a class="button" href="https://forms.gle/HdjUF1TaJjVHj6BK8" target="_blank">Start Project Inquiry</a>
+  </section>
+
+  <footer>
+    curielconsulting.com • Curiel Brand Studios
+  </footer>
+</body>
+</html>
