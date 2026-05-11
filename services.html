@@ -11,10 +11,10 @@
       --charcoal: #10100f;
       --ivory: #f7f1e6;
       --soft-ivory: #fbf7ef;
-      --gold: #d6b56d;
-      --deep-gold: #9a7a38;
-      --muted-gold: #b9964f;
-      --text-dark: #181818;
+     --gold: #c9a24f;
+--deep-gold: #8f6b2d;
+--muted-gold: #a8843d;
+--title-gold: #9b742f;
       --cream-text: #f3ead5;
     }
 
@@ -197,30 +197,34 @@ font-family: 'Cormorant Garamond', Georgia, serif;      letter-spacing: 7px;
         linear-gradient(145deg, rgba(214,181,109,0.07), rgba(255,255,255,0.012));
     }
 
-   .card h3::after {
+  .card h3::before {
   content: "";
   display: block;
-  width: 72px;
+  width: 38px;
   height: 1px;
-  background: rgba(214,181,109,0.72);
-  margin: 18px 0 18px;
+  background: rgba(155,116,47,0.85);
+  margin-bottom: 18px;
 }
 
-.card h3::before {
-  content: "✦";
+.card h3::after {
+  content: "";
   display: block;
-  color: var(--muted-gold);
-  font-size: 16px;
-  margin-bottom: 14px;
-  letter-spacing: 3px;
+  width: 86px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(155,116,47,0.95), rgba(155,116,47,0.12));
+  margin: 20px 0 18px;
 }
     }
 
     .card h3 {
-      color: var(--gold);
-      font-size: 31px;
-      line-height: 1.08;
-      margin: 0 0 16px;
+  color: var(--title-gold);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.02;
+  margin: 0 0 16px;
+  letter-spacing: 0.3px;
+}
     }
 
     .card p {
