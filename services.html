@@ -77,16 +77,55 @@ font-family: 'Cormorant Garamond', Georgia, serif;      letter-spacing: 7px;
       border-bottom: 1px solid rgba(214,181,109,0.45);
     }
 
-    .hero {
-      max-width: 1180px;
-      margin: 0 auto;
-      border: 1px solid rgba(214,181,109,0.6);
-      padding: 72px 42px;
-      text-align: center;
-      background: rgba(0,0,0,0.28);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.45);
-    }
+   .hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 72px 42px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#070707, #070707) padding-box,
+    linear-gradient(
+      135deg,
+      rgba(214,181,109,0.18),
+      rgba(255,235,170,0.85),
+      rgba(155,116,47,0.32),
+      rgba(214,181,109,0.78),
+      rgba(80,55,20,0.25)
+    ) border-box;
+
+  box-shadow:
+    0 28px 75px rgba(0,0,0,0.55),
+    0 0 38px rgba(214,181,109,0.10),
+    inset 0 0 45px rgba(214,181,109,0.035);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(214,181,109,0.18);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -35%;
+  left: -20%;
+  width: 55%;
+  height: 170%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,235,170,0.10),
+    transparent
+  );
+  transform: rotate(18deg);
+  pointer-events: none;
+}
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
