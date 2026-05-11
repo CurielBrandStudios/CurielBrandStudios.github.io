@@ -15,6 +15,7 @@
       --gold: #c6a15a;
       --bright-gold: #d6b56d;
       --deep-gold: #8f6b2d;
+      --muted-gold: #9b742f;
       --text-dark: #181818;
       --cream-text: #f3ead5;
     }
@@ -149,14 +150,14 @@
 
     h1 {
       color: var(--gold);
-      font-size: clamp(56px, 8vw, 112px);
+      font-size: clamp(54px, 8vw, 112px);
       line-height: 0.98;
       margin: 0 0 24px;
       text-shadow: 0 0 22px rgba(214,181,109,0.25);
     }
 
     .hero p {
-      max-width: 820px;
+      max-width: 850px;
       margin: 0 auto;
       color: #f5ecd8;
       font-size: 18px;
@@ -170,12 +171,13 @@
         var(--soft-ivory);
       color: var(--text-dark);
       text-align: center;
-      padding: 58px 8% 62px;
+      padding: 62px 8% 66px;
       border-bottom: 1px solid rgba(156,121,56,0.35);
     }
 
-    .intro .small {
-      color: var(--deep-gold);
+    .intro .small,
+    .fit .small,
+    .section-title .small {
       text-transform: uppercase;
       letter-spacing: 6px;
       font-size: 12px;
@@ -183,15 +185,24 @@
       margin-bottom: 15px;
     }
 
-    .intro h2 {
+    .intro .small,
+    .fit .small {
+      color: var(--deep-gold);
+    }
+
+    .intro h2,
+    .fit h2,
+    .notice h2 {
       color: var(--deep-gold);
       font-size: clamp(42px, 6vw, 76px);
       line-height: 1;
       margin: 0 0 18px;
     }
 
-    .intro p {
-      max-width: 850px;
+    .intro p,
+    .fit p,
+    .notice p {
+      max-width: 900px;
       margin: 0 auto;
       font-size: 17px;
       line-height: 1.8;
@@ -211,11 +222,6 @@
 
     .section-title .small {
       color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 14px;
     }
 
     .section-title h2 {
@@ -224,6 +230,16 @@
       line-height: 1;
       margin: 0;
       text-shadow: 0 0 18px rgba(214,181,109,0.16);
+    }
+
+    .section-sub {
+      max-width: 850px;
+      margin: 20px auto 0;
+      color: #e9ddc8;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 300;
+      text-align: center;
     }
 
     .grid {
@@ -237,7 +253,7 @@
     .card {
       border: 1px solid rgba(198,161,90,0.42);
       padding: 48px 38px 38px;
-      min-height: 330px;
+      min-height: 390px;
       background:
         linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.006));
       box-shadow:
@@ -284,7 +300,7 @@
     }
 
     .card p {
-      margin: 0 0 18px;
+      margin: 0 0 20px;
     }
 
     ul {
@@ -296,13 +312,83 @@
       margin-bottom: 10px;
     }
 
+    .fit {
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 26%),
+        var(--soft-ivory);
+      color: var(--text-dark);
+      text-align: center;
+      padding: 66px 8% 70px;
+      border-top: 1px solid rgba(156,121,56,0.35);
+      border-bottom: 1px solid rgba(156,121,56,0.35);
+    }
+
+    .fit-list {
+      max-width: 1000px;
+      margin: 34px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .fit-item {
+      border: 1px solid rgba(143,107,45,0.32);
+      padding: 22px 18px;
+      color: #2b261c;
+      background: rgba(255,255,255,0.35);
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+    }
+
+    .notice {
+      background: var(--black);
+      color: var(--cream-text);
+      text-align: center;
+      padding: 70px 8%;
+      border-bottom: 1px solid rgba(214,181,109,0.35);
+    }
+
+    .notice h2 {
+      color: var(--gold);
+    }
+
+    .notice p {
+      color: #e9ddc8;
+      font-size: 15.5px;
+      font-weight: 300;
+      max-width: 900px;
+    }
+
+    .cta {
+      background: var(--soft-ivory);
+      text-align: center;
+      padding: 76px 8% 84px;
+    }
+
+    .cta h2 {
+      color: var(--deep-gold);
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 1;
+      margin: 0 0 18px;
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      color: #2b261c;
+      font-size: 17px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
     .button {
       display: inline-block;
       width: fit-content;
       border: 1px solid rgba(198,161,90,0.9);
-      color: var(--bright-gold);
-      background:
-        linear-gradient(145deg, rgba(214,181,109,0.10), rgba(0,0,0,0.15));
+      color: #8f6b2d;
+      background: linear-gradient(145deg, rgba(214,181,109,0.18), rgba(255,255,255,0.45));
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 3.5px;
@@ -310,9 +396,8 @@
       font-weight: 500;
       padding: 14px 22px;
       box-shadow:
-        0 10px 22px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.12),
-        inset 0 -1px 0 rgba(0,0,0,0.45);
+        0 14px 28px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.55);
       transition: all 0.22s ease;
     }
 
@@ -323,56 +408,9 @@
       border-color: #d6b56d;
       transform: translateY(-2px);
       box-shadow:
-        0 16px 34px rgba(0,0,0,0.55),
+        0 16px 34px rgba(0,0,0,0.35),
         0 0 18px rgba(214,181,109,0.22),
         inset 0 1px 0 rgba(255,255,255,0.28);
-    }
-
-    .notice {
-      background: var(--soft-ivory);
-      color: var(--text-dark);
-      text-align: center;
-      padding: 68px 8%;
-      border-top: 1px solid rgba(156,121,56,0.35);
-      border-bottom: 1px solid rgba(156,121,56,0.35);
-    }
-
-    .notice h2 {
-      color: var(--deep-gold);
-      font-size: clamp(40px, 5vw, 72px);
-      line-height: 1;
-      margin: 0 0 18px;
-    }
-
-    .notice p {
-      max-width: 860px;
-      margin: 0 auto;
-      font-size: 16.5px;
-      line-height: 1.8;
-      color: #2b261c;
-      font-weight: 400;
-    }
-
-    .cta {
-      background: var(--black);
-      text-align: center;
-      padding: 78px 8% 88px;
-    }
-
-    .cta h2 {
-      color: var(--gold);
-      font-size: clamp(42px, 6vw, 78px);
-      line-height: 1;
-      margin: 0 0 18px;
-    }
-
-    .cta p {
-      max-width: 760px;
-      margin: 0 auto 32px;
-      color: #e9ddc8;
-      font-size: 16px;
-      line-height: 1.8;
-      font-weight: 300;
     }
 
     footer {
@@ -392,7 +430,8 @@
         align-items: flex-start;
       }
 
-      .grid {
+      .grid,
+      .fit-list {
         grid-template-columns: 1fr;
       }
     }
@@ -405,6 +444,7 @@
       .hero-wrap,
       .intro,
       .details,
+      .fit,
       .notice,
       .cta {
         padding-left: 7%;
@@ -439,130 +479,147 @@
       <div class="eyebrow">Business Setup • Structure • Launch Support</div>
       <h1>Business Setup & Consulting</h1>
       <p>
-        Administrative and strategic support for entrepreneurs and service providers who need
-        help organizing the early stages of a business, launch, or professional brand presence.
+        A guided support path for entrepreneurs and service providers who need structure,
+        organization, and clarity before branding, marketing, websites, or public launch.
       </p>
     </section>
   </header>
 
   <section class="intro">
-    <div class="small">Structured Support for New & Growing Businesses</div>
-    <h2>Build With Clarity Before You Launch</h2>
+    <div class="small">Before the Brand, Build the Foundation</div>
+    <h2>Move From Scattered Ideas to a Clear Business Structure</h2>
     <p>
-      This service path helps clients organize the foundational pieces of a business before moving into
-      branding, marketing, websites, or client-facing materials. It is designed for business owners who need
-      practical direction, setup support, and a clearer plan for moving forward.
+      Business setup can feel overwhelming when you are trying to make decisions about structure,
+      domains, documents, platforms, services, offers, and launch steps all at once. This service helps
+      organize the early business foundation so you can move forward with more confidence, cleaner priorities,
+      and a more professional public presence.
     </p>
   </section>
 
- <main class="details">
-  <div class="section-title">
-    <div class="small">Service Details</div>
-    <h2>What This Can Include</h2>
-  </div>
-
-  <div class="grid">
-    <article class="card">
-      <h3>Business Foundation</h3>
-      <p>
-        Support for clients who need help organizing the early structure of a business before branding,
-        marketing, or public launch begins.
+  <main class="details">
+    <div class="section-title">
+      <div class="small">How We Support the Setup Process</div>
+      <h2>Business Setup Services</h2>
+      <p class="section-sub">
+        This service path is designed to help organize the moving parts behind your business.
+        Each project may include a custom combination of setup support, research assistance,
+        digital preparation, launch planning, and operational organization.
       </p>
-      <ul>
-        <li>Business structure research support</li>
-        <li>LLC / S-Corp comparison organization</li>
-        <li>Existing business setup review</li>
-        <li>Basic launch-readiness checklist</li>
-        <li>Business name and offer direction</li>
-      </ul>
-    </article>
+    </div>
 
-    <article class="card">
-      <h3>Administrative Setup</h3>
-      <p>
-        Practical setup support for the behind-the-scenes pieces that help a business feel more official,
-        organized, and ready to operate.
-      </p>
-      <ul>
-        <li>EIN workflow assistance</li>
-        <li>Third-party incorporation platform coordination</li>
-        <li>Registered agent research and comparison</li>
-        <li>Virtual office / business address research</li>
-        <li>Document and information organization</li>
-      </ul>
-    </article>
+    <div class="grid">
+      <article class="card">
+        <h3>Business Foundation</h3>
+        <p>
+          Support for clients who need help understanding what should be organized before moving into
+          branding, marketing, or public-facing materials.
+        </p>
+        <ul>
+          <li>Business structure research support</li>
+          <li>LLC / S-Corp comparison organization</li>
+          <li>Existing business setup review</li>
+          <li>Business name and offer direction</li>
+          <li>Launch-readiness checklist development</li>
+        </ul>
+      </article>
 
-    <article class="card">
-      <h3>Digital Setup</h3>
-      <p>
-        Guidance for clients who need their business presence prepared online before launching publicly.
-      </p>
-      <ul>
-        <li>Domain research and availability review</li>
-        <li>Domain provider coordination support</li>
-        <li>Business email direction</li>
-        <li>Linktree or link-in-bio setup direction</li>
-        <li>Basic digital presence planning</li>
-      </ul>
-    </article>
+      <article class="card">
+        <h3>Administrative Setup</h3>
+        <p>
+          Practical support for the behind-the-scenes pieces that help a business feel official,
+          organized, and ready to operate.
+        </p>
+        <ul>
+          <li>EIN workflow assistance</li>
+          <li>Third-party incorporation platform coordination</li>
+          <li>Registered agent research and comparison</li>
+          <li>Virtual office / business address research</li>
+          <li>Document and information organization</li>
+        </ul>
+      </article>
 
-    <article class="card">
-      <h3>Launch Planning</h3>
-      <p>
-        Strategic organization for clients who know what they want to build but need help turning it into
-        a clear launch path.
-      </p>
-      <ul>
-        <li>Launch priorities and timeline planning</li>
-        <li>Service package organization</li>
-        <li>Offer structure recommendations</li>
-        <li>Client-facing material planning</li>
-        <li>Next-step roadmap before launch</li>
-      </ul>
-    </article>
+      <article class="card">
+        <h3>Digital Readiness</h3>
+        <p>
+          Preparation for the digital pieces your business may need before showing up publicly online.
+        </p>
+        <ul>
+          <li>Domain research and availability review</li>
+          <li>Domain provider coordination support</li>
+          <li>Business email direction</li>
+          <li>Linktree or link-in-bio setup direction</li>
+          <li>Basic digital presence planning</li>
+        </ul>
+      </article>
 
-    <article class="card">
-      <h3>Business Clarity</h3>
-      <p>
-        A focused service for clients who feel scattered, unsure, or overwhelmed by all the moving pieces
-        of starting or cleaning up a business.
-      </p>
-      <ul>
-        <li>Clarifying what needs to happen first</li>
-        <li>Identifying missing business pieces</li>
-        <li>Prioritizing services, documents, and digital needs</li>
-        <li>Organizing ideas into practical action steps</li>
-        <li>Separating urgent needs from future phases</li>
-      </ul>
-    </article>
+      <article class="card">
+        <h3>Launch Planning</h3>
+        <p>
+          Strategic organization for clients who know what they want to build but need help turning it
+          into a clear launch path.
+        </p>
+        <ul>
+          <li>Launch priorities and timeline planning</li>
+          <li>Service package organization</li>
+          <li>Offer structure recommendations</li>
+          <li>Client-facing material planning</li>
+          <li>Next-step roadmap before launch</li>
+        </ul>
+      </article>
 
-   <article class="card">
-  <h3>Operational Organization</h3>
-  <p>
-    Support for organizing the working pieces of your business so you can move forward with more structure,
-    clarity, and confidence.
-  </p>
-  <ul>
-    <li>Service and offer organization</li>
-    <li>Client workflow planning</li>
-    <li>Document and file organization direction</li>
-    <li>Priority task sequencing</li>
-    <li>Setup support before branding, marketing, or website development</li>
-  </ul>
-</article>
-  </div>
-</main>
-<section class="notice">
-  <h2>Who This Is Best For</h2>
-  <p>
-    This service is ideal for new entrepreneurs, service-based businesses, real estate professionals,
-    creatives turning skills into formal offers, and business owners preparing to launch, relaunch,
-    or clean up the structure behind their brand. It is especially helpful if you know you need support,
-    but you are not sure what should happen first.
-  </p>
-</section>
+      <article class="card">
+        <h3>Service & Offer Structure</h3>
+        <p>
+          Support for shaping your ideas into clear service paths, client-facing offers, and practical
+          next steps for selling or presenting your work.
+        </p>
+        <ul>
+          <li>Service category organization</li>
+          <li>Package direction and naming support</li>
+          <li>Basic pricing structure discussion</li>
+          <li>Offer clarity and client-fit positioning</li>
+          <li>Recommendations for future branded materials</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Operational Organization</h3>
+        <p>
+          Support for organizing the working pieces of your business so you can move forward with more
+          structure, clarity, and confidence.
+        </p>
+        <ul>
+          <li>Client workflow planning</li>
+          <li>Document and file organization direction</li>
+          <li>Priority task sequencing</li>
+          <li>Setup support before branding or website work</li>
+          <li>Clearer order of operations for next phases</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <section class="fit">
+    <div class="small">Client Fit</div>
+    <h2>Who This Is Best For</h2>
+    <p>
+      This service is ideal for business owners who know they need support, but are not sure what should
+      happen first. It is especially useful before investing in branding, websites, marketing materials,
+      or client-facing documents.
+    </p>
+
+    <div class="fit-list">
+      <div class="fit-item">New entrepreneurs preparing to launch</div>
+      <div class="fit-item">Service-based businesses needing structure</div>
+      <div class="fit-item">Real estate professionals organizing a new business presence</div>
+      <div class="fit-item">Creatives turning skills into formal offers</div>
+      <div class="fit-item">Business owners preparing to relaunch or reposition</div>
+      <div class="fit-item">Clients who feel scattered and need a clear next step</div>
+    </div>
+  </section>
+
   <section class="notice">
-    <h2>Important Note</h2>
+    <h2>Important Boundaries</h2>
     <p>
       Curiel Brand Studios provides administrative, creative, organizational, and educational support.
       We do not provide legal, tax, accounting, financial, brokerage compliance, or licensed professional advice.
@@ -574,7 +631,7 @@
     <h2>Ready to Organize Your Business Setup?</h2>
     <p>
       Start with a project inquiry so we can understand where your business currently stands and recommend
-      the best setup, branding, or launch support path.
+      the best setup, branding, launch, or digital support path.
     </p>
     <a class="button" href="https://forms.gle/HdjUF1TaJjVHj6BK8" target="_blank">Start Project Inquiry</a>
   </section>
