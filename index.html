@@ -370,7 +370,7 @@
   min-height: 88vh;
   padding: 90px 7%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 46% 54%;
   align-items: center;
   gap: 70px;
   background:
@@ -408,15 +408,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 620px;
 }
 
 .hero-logo-panel img {
-  width: min(520px, 90%);
+  width: min(760px, 115%);
+  max-width: none;
   height: auto;
   object-fit: contain;
   filter:
-    drop-shadow(0 0 26px rgba(214,181,109,0.30))
-    drop-shadow(0 24px 45px rgba(0,0,0,0.65));
+    drop-shadow(0 0 34px rgba(214,181,109,0.35))
+    drop-shadow(0 30px 60px rgba(0,0,0,0.75));
 }
 
 @media (max-width: 720px) {
