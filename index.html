@@ -366,7 +366,80 @@
         font-size: 13px;
       }
     }
-  </style>
+    .luxury-hero {
+  min-height: 82vh;
+  padding: 90px 7%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 70px;
+  background:
+    radial-gradient(circle at 80% 45%, rgba(214,181,109,0.18), transparent 28%),
+    linear-gradient(135deg, #030303 0%, #080807 60%, #020202 100%);
+  border-bottom: 1px solid rgba(214,181,109,0.45);
+  overflow: hidden;
+}
+
+.hero-copy {
+  max-width: 620px;
+}
+
+.hero-copy h1 {
+  color: var(--cream-text);
+  font-size: clamp(48px, 5.6vw, 82px);
+  line-height: 0.98;
+  margin: 0 0 28px;
+}
+
+.hero-copy h1 em {
+  color: var(--bright-gold);
+  font-style: italic;
+}
+
+.hero-copy p {
+  color: #e9ddc8;
+  font-size: 17px;
+  line-height: 1.85;
+  margin: 0 0 34px;
+  max-width: 540px;
+}
+
+.hero-logo-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo-panel img {
+  width: min(520px, 90%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(214,181,109,0.22));
+}
+
+@media (max-width: 720px) {
+  .luxury-hero {
+    grid-template-columns: 1fr;
+    padding: 70px 7%;
+    text-align: center;
+    gap: 42px;
+  }
+
+  .hero-copy {
+    margin: 0 auto;
+  }
+
+  .hero-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-logo-panel img {
+    width: min(340px, 90%);
+  }
+}
+  </style
+    
 </head>
 
 <body>
@@ -386,19 +459,17 @@
     <div class="small">Strategy. Design. Impact.</div>
 
     <h1>
-      We Build Brands That Look Powerful and Perform Even Better.
+      We Build Brands That Look <em>Powerful</em> and Perform Even Better.
     </h1>
 
     <p>
-      Curiel Brand Studios provides luxury branding, strategic web design,
-      and high-end business materials for entrepreneurs and established brands
-      ready to elevate their presence and attract premium clients.
+      Luxury branding, websites, and client-facing business materials for entrepreneurs and professionals ready to look polished, trustworthy, and premium.
     </p>
 
     <a class="button" href="services.html">Explore Our Services</a>
   </div>
 
-  <div class="hero-logo">
+  <div class="hero-logo-panel">
     <img src="assets/home-hero.png" alt="Curiel Brand Studios logo">
   </div>
 </header>
