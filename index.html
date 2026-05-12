@@ -370,7 +370,7 @@
   min-height: 88vh;
   padding: 90px 7%;
   display: grid;
-  grid-template-columns: 42% 58%;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 70px;
   background:
@@ -406,17 +406,17 @@
 
 .hero-logo-panel {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  margin-right: -2%;
 }
 
 .hero-logo-panel img {
-  width: min(900px, 115%);
-  max-width: none;
+  width: min(520px, 90%);
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 45px rgba(214,181,109,0.32));
+  filter:
+    drop-shadow(0 0 26px rgba(214,181,109,0.30))
+    drop-shadow(0 24px 45px rgba(0,0,0,0.65));
 }
 
 @media (max-width: 720px) {
@@ -472,7 +472,7 @@
   </div>
 
   <div class="hero-logo-panel">
-    <img src="assets/home-hero.png" alt="Curiel Brand Studios logo">
+    <img src="assets/logo-trans.png" alt="Curiel Brand Studios logo">
   </div>
 </header>
 
